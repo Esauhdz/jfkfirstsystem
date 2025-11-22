@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFK First System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #0a2a43;
+            color: white;
+            padding: 15px;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center; /* CENTRADO */
+            text-align: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        nav {
+            background: #12395c;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #0a2a43;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .servicio {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .icono {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .accordion {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .accordion button {
+            width: 100%;
+            background: #0a2a43;
+            color: white;
+            padding: 15px;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .panel {
+            display: none;
+            padding: 15px;
+            background: #f1f1f1;
+        }
+
+        footer {
+            background: #0a2a43;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ⭐ ENCABEZADO CORREGIDO ⭐ -->
+<header>
+    <div class="logo-title">
+        <img src="logo.png" alt="Logo JFK First System" class="logo">
+        <h1 style="margin: 0;">JFK First System</h1>
+    </div>
+</header>
+<!-- ⭐ FIN ENCABEZADO ⭐ -->
+
+<nav>
+    <a href="#nosotros">Sobre Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#areas">Áreas</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- ⭐ SECCIÓN CON LA IMAGEN fondo.png EN MEDIO ⭐ -->
+<section 
+style="
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 100px 25px;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+    animation: fadeIn 1.5s ease-out;
+">
+    <h2 style="font-size: 34px; margin-bottom: 10px; color:white;">
+        Innovación en Seguridad y Tecnología
+    </h2>
+    <p style="font-size: 19px; max-width: 750px; margin: auto;">
+        Soluciones avanzadas en seguridad electrónica, multimedia, redes, CCTV, control de acceso
+        y automatización profesional para hogares, negocios y empresas.
+    </p>
+</section>
+<!-- ⭐ FIN DE LA SECCIÓN ⭐ -->
+
+<section id="nosotros">
+    <h2>Quiénes somos</h2>
+    <p>
+        Somos una empresa con 23 años de experiencia en integración de equipos de seguridad, audio, multimedia, controles de acceso y mantenimientos.
+        Nos especializamos en brindar soluciones avanzadas para hogares, negocios y empresas, garantizando la tranquilidad y funcionalidad de cada uno de nuestros sistemas.
+    </p>
+</section>
+
+<section id="servicios">
+    <h2>Servicios que ofrecemos</h2>
+
+    <div class="servicios-grid">
+        <div class="servicio">
+            <div class="icono">🔧</div>
+            Instalación
+        </div>
+        <div class="servicio">
+            <div class="icono">💻</div>
+            Venta de equipos
+        </div>
+        <div class="servicio">
+            <div class="icono">🛠️</div>
+            Mantenimientos
+        </div>
+        <div class="servicio">
+            <div class="icono">🔩</div>
+            Reparación
+        </div>
+        <div class="servicio">
+            <div class="icono">🔗</div>
+            Integración de sistemas
+        </div>
+        <div class="servicio">
+            <div class="icono">⚙️</div>
+            Optimización de equipos
+        </div>
+        <div class="servicio">
+            <div class="icono">📐</div>
+            Diseño de proyectos
+        </div>
+        <div class="servicio">
+            <div class="icono">📡</div>
+            Monitoreo de paneles de alarma
+        </div>
+    </div>
+</section>
+
+<section id="areas">
+    <h2>Áreas que manejamos</h2>
+
+    <ul>
+        <li>Video Vigilancia (CCTV)</li>
+        <li>Alarmas (Intrusión, Incendio, Vecinal)</li>
+        <li>Control de acceso (personal y vehicular)</li>
+        <li>Cercas eléctricas</li>
+        <li>Multimedia (audio, video, automatización)</li>
+        <li>Redes (Enlaces punto a punto)</li>
+    </ul>
+
+    <div class="accordion">
+        <button onclick="toggleAccordion(this)">📹 CCTV</button>
+        <div class="panel">
+            <ul>
+                <li>Cámaras análogas</li>
+                <li>Cámaras IP</li>
+                <li>Fijas y de movimiento</li>
+                <li>Videograbadoras</li>
+                <li>Videoporteros IP</li>
+                <li>Sala de monitoreo</li>
+                <li>Equipos ocultos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button onclick="toggleAccordion(this)">🚨 Alarmas de intrusión</button>
+        <div class="panel">
+            <ul>
+                <li>Residenciales, comerciales y vecinales</li>
+                <li>Cableadas, inalámbricas, Wi-Fi, GSM (chip SIM)</li>
+                <li>Sensores de puertas y ventanas</li>
+                <li>Sensores de movimiento interior y exterior</li>
+                <li>Detector de humo</li>
+                <li>Sensor de rotura de cristal</li>
+                <li>Sensores de vibración</li>
+                <li>Fotoceldas perimetrales</li>
+                <li>Botón de pánico (físico y app)</li>
+                <li>Sirena de aviso local</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button onclick="toggleAccordion(this)">🔥 Alarmas de incendio</button>
+        <div class="panel">
+            <ul>
+                <li>Comercial e inteligente</li>
+                <li>Sensores de humo, calor, gas y monóxido</li>
+                <li>Estaciones de jalón</li>
+                <li>Sirena estrobo</li>
+                <li>Módulo de flujo y presión</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>WhatsApp:</strong> 8124199535</p>
+    <p><strong>Correo:</strong> javiermurillo.jmh@gmail.com</p>
+    <p><strong>Horario:</strong> Lunes - Viernes 9:00 A.M. - 6:00 P.M. | Sábados 9:00 A.M. - 3:00 P.M.</p>
+
+    <div class="social">
+        <a href="https://facebook.com/jfkfirstsystem">Facebook</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 JFK First Sistem — Seguridad Electrónica
+</footer>
+
+<script>
+function toggleAccordion(btn) {
+    const panel = btn.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
