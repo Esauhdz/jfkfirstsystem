@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JFK First System</title>
 
+    <!-- ÍCONO OFICIAL DE WHATSAPP (FONT AWESOME) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -113,10 +116,10 @@
             text-decoration: none;
         }
 
-        /* ----------- SLIDER CSS AJUSTADO ----------- */
+        /* ----------- SLIDER CSS ----------- */
         .slider-container {
             width: 90%;
-            max-width: 700px; /* ancho reducido */
+            max-width: 700px;
             margin: 40px auto;
             overflow: hidden;
             position: relative;
@@ -152,9 +155,28 @@
         .izq { left: 10px; }
         .der { right: 10px; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* ----------- BOTÓN WHATSAPP ----------- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform .3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -192,7 +214,6 @@ style="
     border-radius: 18px;
     color: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.35);
-    animation: fadeIn 1.5s ease-out;
 ">
     <h2 style="font-size: 34px; margin-bottom: 10px; color:white;">
         Innovación en Seguridad y Tecnología
@@ -207,7 +228,7 @@ style="
     <h2>Quiénes somos</h2>
     <p>
         Somos una empresa con 23 años de experiencia en integración de equipos de seguridad, audio, multimedia, controles de acceso y mantenimientos.
-        Nos especializamos en brindar soluciones avanzadas para hogares, negocios y empresas, garantizando la tranquilidad y funcionalidad de cada uno de nuestros sistemas.
+        Nos especializamos en brindar soluciones avanzadas para hogares, negocios y empresas, garantizando la tranquilidad y funcionalidad de cada sistema.
     </p>
 </section>
 
@@ -281,10 +302,9 @@ style="
             </ul>
         </div>
     </div>
-
 </section>
 
-<!-- ⭐⭐⭐ GALERÍA MOVIDA AQUÍ ⭐⭐⭐ -->
+<!-- ⭐⭐⭐ GALERÍA ⭐⭐⭐ -->
 <section id="galeria">
     <h2 style="text-align:center;">Galería</h2>
 
@@ -309,12 +329,12 @@ style="
     </div>
 </section>
 
-<!-- ⭐⭐⭐ CONTACTO AHORA DESPUÉS DE GALERÍA ⭐⭐⭐ -->
+<!-- ⭐⭐⭐ CONTACTO ⭐⭐⭐ -->
 <section id="contacto">
     <h2>Contacto</h2>
     <p><strong>WhatsApp:</strong> 8124199535</p>
     <p><strong>Correo:</strong> javiermurillo.jmh@gmail.com</p>
-    <p><strong>Horario:</strong> Lunes - Viernes 9:00 A.M. - 6:00 P.M. | Sábados 9:00 A.M. - 3:00 P.M.</p>
+    <p><strong>Horario:</strong> Lunes - Viernes 9:00 AM - 6:00 PM | Sábados 9:00 AM - 3:00 PM</p>
 
     <div class="social">
         <a href="https://facebook.com/jfkfirstsystem">Facebook</a>
@@ -322,8 +342,13 @@ style="
 </section>
 
 <footer>
-    © 2025 JFK First Sistem — Seguridad Electrónica
+    © 2025 JFK First System — Seguridad Electrónica
 </footer>
+
+<!-- ⭐⭐⭐ BOTÓN WHATSAPP ⭐⭐⭐ -->
+<a class="whatsapp-btn" href="https://wa.me/5218124199535" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <!-- ⭐⭐⭐ FUNCIONES JS ⭐⭐⭐ -->
 <script>
