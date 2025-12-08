@@ -23,7 +23,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            justify-content: center; /* CENTRADO */
+            justify-content: center;
             text-align: center;
         }
 
@@ -113,6 +113,45 @@
             text-decoration: none;
         }
 
+        /* ----------- SLIDER CSS AJUSTADO ----------- */
+        .slider-container {
+            width: 90%;
+            max-width: 700px; /* ancho reducido */
+            margin: 40px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .slider img {
+            width: 100%;
+            flex-shrink: 0;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .flecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 45px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            user-select: none;
+        }
+
+        .izq { left: 10px; }
+        .der { right: 10px; }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -122,23 +161,21 @@
 
 <body>
 
-<!-- ⭐ ENCABEZADO CORREGIDO ⭐ -->
 <header>
     <div class="logo-title">
         <img src="logo.png" alt="Logo JFK First System" class="logo">
         <h1 style="margin: 0;">JFK First System</h1>
     </div>
 </header>
-<!-- ⭐ FIN ENCABEZADO ⭐ -->
 
 <nav>
     <a href="#nosotros">Sobre Nosotros</a>
     <a href="#servicios">Servicios</a>
     <a href="#areas">Áreas</a>
+    <a href="#galeria">Galería</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- ⭐ SECCIÓN CON LA IMAGEN fondo.png EN MEDIO ⭐ -->
 <section 
 style="
     width: 90%;
@@ -165,7 +202,6 @@ style="
         y automatización profesional para hogares, negocios y empresas.
     </p>
 </section>
-<!-- ⭐ FIN DE LA SECCIÓN ⭐ -->
 
 <section id="nosotros">
     <h2>Quiénes somos</h2>
@@ -179,38 +215,14 @@ style="
     <h2>Servicios que ofrecemos</h2>
 
     <div class="servicios-grid">
-        <div class="servicio">
-            <div class="icono">🔧</div>
-            Instalación
-        </div>
-        <div class="servicio">
-            <div class="icono">💻</div>
-            Venta de equipos
-        </div>
-        <div class="servicio">
-            <div class="icono">🛠️</div>
-            Mantenimientos
-        </div>
-        <div class="servicio">
-            <div class="icono">🔩</div>
-            Reparación
-        </div>
-        <div class="servicio">
-            <div class="icono">🔗</div>
-            Integración de sistemas
-        </div>
-        <div class="servicio">
-            <div class="icono">⚙️</div>
-            Optimización de equipos
-        </div>
-        <div class="servicio">
-            <div class="icono">📐</div>
-            Diseño de proyectos
-        </div>
-        <div class="servicio">
-            <div class="icono">📡</div>
-            Monitoreo de paneles de alarma
-        </div>
+        <div class="servicio"><div class="icono">🔧</div>Instalación</div>
+        <div class="servicio"><div class="icono">💻</div>Venta de equipos</div>
+        <div class="servicio"><div class="icono">🛠️</div>Mantenimientos</div>
+        <div class="servicio"><div class="icono">🔩</div>Reparación</div>
+        <div class="servicio"><div class="icono">🔗</div>Integración de sistemas</div>
+        <div class="servicio"><div class="icono">⚙️</div>Optimización de equipos</div>
+        <div class="servicio"><div class="icono">📐</div>Diseño de proyectos</div>
+        <div class="servicio"><div class="icono">📡</div>Monitoreo de paneles de alarma</div>
     </div>
 </section>
 
@@ -220,14 +232,14 @@ style="
     <ul>
         <li>Video Vigilancia (CCTV)</li>
         <li>Alarmas (Intrusión, Incendio, Vecinal)</li>
-        <li>Control de acceso (personal y vehicular)</li>
+        <li>Control de acceso</li>
         <li>Cercas eléctricas</li>
-        <li>Multimedia (audio, video, automatización)</li>
-        <li>Redes (Enlaces punto a punto)</li>
+        <li>Multimedia</li>
+        <li>Redes</li>
     </ul>
 
     <div class="accordion">
-        <button onclick="toggleAccordion(this)">📹 CCTV</button>
+        <button onclick="toggleAccordion(this)">CCTV</button>
         <div class="panel">
             <ul>
                 <li>Cámaras análogas</li>
@@ -242,25 +254,23 @@ style="
     </div>
 
     <div class="accordion">
-        <button onclick="toggleAccordion(this)">🚨 Alarmas de intrusión</button>
+        <button onclick="toggleAccordion(this)">Alarmas de intrusión</button>
         <div class="panel">
             <ul>
-                <li>Residenciales, comerciales y vecinales</li>
-                <li>Cableadas, inalámbricas, Wi-Fi, GSM (chip SIM)</li>
+                <li>Residenciales y comerciales</li>
+                <li>Cableadas, inalámbricas, Wi-Fi, GSM</li>
                 <li>Sensores de puertas y ventanas</li>
-                <li>Sensores de movimiento interior y exterior</li>
+                <li>Sensores de movimiento</li>
                 <li>Detector de humo</li>
-                <li>Sensor de rotura de cristal</li>
-                <li>Sensores de vibración</li>
-                <li>Fotoceldas perimetrales</li>
-                <li>Botón de pánico (físico y app)</li>
-                <li>Sirena de aviso local</li>
+                <li>Sensor de cristal</li>
+                <li>Fotoceldas</li>
+                <li>Botón de pánico</li>
             </ul>
         </div>
     </div>
 
     <div class="accordion">
-        <button onclick="toggleAccordion(this)">🔥 Alarmas de incendio</button>
+        <button onclick="toggleAccordion(this)">Alarmas de incendio</button>
         <div class="panel">
             <ul>
                 <li>Comercial e inteligente</li>
@@ -274,6 +284,32 @@ style="
 
 </section>
 
+<!-- ⭐⭐⭐ GALERÍA MOVIDA AQUÍ ⭐⭐⭐ -->
+<section id="galeria">
+    <h2 style="text-align:center;">Galería</h2>
+
+    <div class="slider-container">
+        <div class="slider" id="slider">
+
+            <img src="Camara.jpg">
+            <img src="CCVT 2.jpg">
+            <img src="CCVT 3.jpg">
+            <img src="CCVT 4.jpg">
+            <img src="CCVT.jpg">
+            <img src="Accesos.jpg">
+            <img src="Alarma 2.jpg">
+            <img src="Alarma.jpg">
+            <img src="Camara 2.jpg">
+            <img src="Seguridad 2.jpg">
+
+        </div>
+
+        <div class="flecha izq" onclick="mover(-1)">❮</div>
+        <div class="flecha der" onclick="mover(1)">❯</div>
+    </div>
+</section>
+
+<!-- ⭐⭐⭐ CONTACTO AHORA DESPUÉS DE GALERÍA ⭐⭐⭐ -->
 <section id="contacto">
     <h2>Contacto</h2>
     <p><strong>WhatsApp:</strong> 8124199535</p>
@@ -289,11 +325,45 @@ style="
     © 2025 JFK First Sistem — Seguridad Electrónica
 </footer>
 
+<!-- ⭐⭐⭐ FUNCIONES JS ⭐⭐⭐ -->
 <script>
+
 function toggleAccordion(btn) {
     const panel = btn.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
+    panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
 }
+
+let index = 0;
+let autoPlay;
+
+function mover(direccion) {
+    const slider = document.getElementById("slider");
+    const total = slider.children.length;
+
+    index += direccion;
+
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+
+    slider.style.transform = "translateX(" + (-index * 100) + "%)";
+}
+
+function startAuto() {
+    autoPlay = setInterval(() => mover(1), 3000);
+}
+
+function stopAuto() {
+    clearInterval(autoPlay);
+}
+
+window.onload = () => {
+    startAuto();
+    const sliderBox = document.querySelector(".slider-container");
+    sliderBox.addEventListener("mouseenter", stopAuto);
+    sliderBox.addEventListener("mouseleave", startAuto);
+};
+
 </script>
 
 </body>
