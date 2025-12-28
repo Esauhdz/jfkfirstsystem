@@ -157,23 +157,22 @@
 
         /* ----------- BOTÓN WHATSAPP ----------- */
         .whatsapp-btn {
-            position: fixed;
-            bottom: 22px;
-            right: 22px;
-            background: #25D366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-            cursor: pointer;
-            z-index: 999;
-            transition: transform .3s;
-        }
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: transparent;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+    cursor: pointer;
+    z-index: 999;
+    transition: transform .3s;
+}
 
         .whatsapp-btn:hover {
             transform: scale(1.1);
@@ -397,4 +396,5 @@ window.onload = () => {
 </body>
 
 </html>
+
 
