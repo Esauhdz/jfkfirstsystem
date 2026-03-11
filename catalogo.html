@@ -105,11 +105,16 @@ margin-top:40px;
 <a href="catalogo.html">Catálogo</a>
 </nav>
 
-<h2>Equipos de Seguridad</h2>
+<h2>Equipos</h2>
+<div style="text-align:center; margin:20px;">
+<input type="text" id="buscador" placeholder="Buscar producto..." 
+onkeyup="buscarProducto()" 
+style="padding:10px; width:250px; border-radius:6px; border:1px solid #ccc;">
+</div>
 
 <div class="catalogo">
 
-<div class="producto">
+<div class="producto item">
 <img src="camara.jpg">
 <h3>Cámara de Seguridad</h3>
 <p>Cámara CCTV HD para interior y exterior.</p>
@@ -118,7 +123,7 @@ Consultar
 </a>
 </div>
 
-<div class="producto">
+<div class="producto item">
 <img src="dvr.jpg">
 <h3>DVR 8 Canales</h3>
 <p>Grabador digital compatible con cámaras HD.</p>
@@ -127,7 +132,7 @@ Consultar
 </a>
 </div>
 
-<div class="producto">
+<div class="producto item">
 <img src="alarma.jpg">
 <h3>Sistema de Alarma</h3>
 <p>Kit de alarma inalámbrica con sensores.</p>
@@ -136,7 +141,7 @@ Consultar
 </a>
 </div>
 
-<div class="producto">
+<div class="producto item">
 <img src="biometrico.jpg">
 <h3>Control Biométrico</h3>
 <p>Lector de huella para control de acceso.</p>
@@ -145,7 +150,7 @@ Consultar
 </a>
 </div>
 
-<div class="producto">
+<div class="producto item">
 <img src="cerca.jpg">
 <h3>Cerca Eléctrica</h3>
 <p>Sistema de seguridad perimetral.</p>
@@ -154,7 +159,7 @@ Consultar
 </a>
 </div>
 
-<div class="producto">
+<div class="producto item">
 <img src="videoportero.jpg">
 <h3>Videoportero</h3>
 <p>Control de acceso con cámara y monitor.</p>
@@ -170,4 +175,5 @@ Consultar
 </footer>
 
 </body>
+
 </html>
