@@ -151,12 +151,12 @@ let productosPagina = productos.slice(inicio,fin);
 productosPagina.forEach(p=>{
 
 let titulo = p.getElementsByTagName("titulo")[0].textContent;
-let precioUSD = p.getElementsByTagName("precio_lista_usd")[0].textContent;
+let precioUSD = parseFloat(p.getElementsByTagName("precio_lista_usd")[0].textContent);
 let imagen = p.getElementsByTagName("url_imagen")[0].textContent;
 let marca = p.getElementsByTagName("marca")[0].textContent;
 
-let tipoCambio = 17.78; 
-let precioMXN = (precioUSD * tipoCambio).toFixed(2);
+let tipoCambio = 17.78;
+let precioMXN = precioUSD * tipoCambio;
 let precioFinal = (precioMXN * 1.16).toFixed(2);
 
 catalogo.innerHTML += `
@@ -169,7 +169,7 @@ catalogo.innerHTML += `
 
 <p>${marca}</p>
 
-<p><strong>$${precioMXN} MXN</strong></p>
+<p><strong>$${precioFinal} MXN</strong></p>
 
 <p style="font-size:12px;color:#666;">
 *Precio y disponibilidad sujetos a stock
@@ -221,6 +221,7 @@ mostrarPagina();
 </body>
 
 </html>
+
 
 
 
