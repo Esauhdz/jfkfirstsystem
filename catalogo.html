@@ -157,7 +157,7 @@ let marca = p.getElementsByTagName("marca")[0].textContent;
 
 let tipoCambio = 17.78; 
 let precioMXN = (precioUSD * tipoCambio).toFixed(2);
-let precioFinal = (precioMXN * 1.16).toFixed(2); // agrega IVA
+let precioFinal = (precioMXN * 1.16).toFixed(2);
 
 catalogo.innerHTML += `
 
@@ -221,6 +221,7 @@ mostrarPagina();
 </body>
 
 </html>
+
 
 
 
