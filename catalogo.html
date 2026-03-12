@@ -116,8 +116,6 @@ style="padding:10px; width:250px; border-radius:6px; border:1px solid #ccc;">
 
 <div id="catalogo"></div>
 <div id="catalogo" class="catalogo-grid"></div>
-
-
 <script>
 
 fetch("camaras.xml")
@@ -131,23 +129,32 @@ const productos = xml.getElementsByTagName("producto");
 
 for(let i=0;i<productos.length;i++){
 
-let nombre = productos[i].getElementsByTagName("nombre")[0].textContent;
-let precio = productos[i].getElementsByTagName("precio")[0].textContent;
+let titulo = productos[i].getElementsByTagName("titulo")[0].textContent;
+let precio = productos[i].getElementsByTagName("su_precio")[0].textContent;
+let imagen = productos[i].getElementsByTagName("url_imagen")[0].textContent;
+let marca = productos[i].getElementsByTagName("marca")[0].textContent;
+let stock = productos[i].getElementsByTagName("existencia")[0].textContent;
 
 document.getElementById("catalogo").innerHTML += `
 
 <div class="producto item">
 
-<h3>${nombre}</h3>
+<img src="${imagen}">
+
+<h3>${titulo}</h3>
+
+<p><strong>Marca:</strong> ${marca}</p>
 
 <p><strong>PRECIO: $${precio}</strong></p>
+
+<p><strong>Stock:</strong> ${stock}</p>
 
 <p style="font-size:12px;color:#666;">
 *Precio y disponibilidad sujetos a stock
 </p>
 
 <a class="btn"
-href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20el%20producto%20${nombre}"
+href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20${titulo}"
 target="_blank">
 Consultar
 </a>
@@ -161,7 +168,6 @@ Consultar
 });
 
 </script>
-
 </div>
 
 <footer>
@@ -171,6 +177,7 @@ Consultar
 </body>
 
 </html>
+
 
 
 
