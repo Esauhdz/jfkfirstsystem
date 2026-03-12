@@ -115,8 +115,12 @@ style="padding:10px; width:250px; border-radius:6px; border:1px solid #ccc;">
 </div>
 
 <div id="catalogo"></div>
-<div id="catalogo" class="catalogo-grid"></div>
+<div id="catalogo" class="catalogo"></div>
 <script>
+
+let productosGlobal = [];
+let productosMostrados = 0;
+let cantidadMostrar = 20;
 
 fetch("camaras.xml")
 .then(response => response.text())
@@ -125,21 +129,29 @@ fetch("camaras.xml")
 const parser = new DOMParser();
 const xml = parser.parseFromString(data,"text/xml");
 
-const productos = xml.getElementsByTagName("producto");
+productosGlobal = Array.from(xml.getElementsByTagName("producto"));
 
-let limite = 20;   // cantidad de productos que se mostrarán
+mostrarProductos();
 
-for(let i=0;i<productos.length && i<limite;i++){
+});
 
-let titulo = productos[i].getElementsByTagName("titulo")[0].textContent;
-let precio = productos[i].getElementsByTagName("su_precio")[0].textContent;
-let imagen = productos[i].getElementsByTagName("url_imagen")[0].textContent;
+function mostrarProductos(){
 
-document.getElementById("catalogo").innerHTML += `
+let catalogo = document.getElementById("catalogo");
+
+for(let i=productosMostrados;i<productosMostrados+cantidadMostrar && i<productosGlobal.length;i++){
+
+let producto = productosGlobal[i];
+
+let titulo = producto.getElementsByTagName("titulo")[0].textContent;
+let precio = producto.getElementsByTagName("su_precio")[0].textContent;
+let imagen = producto.getElementsByTagName("url_imagen")[0].textContent;
+
+catalogo.innerHTML += `
 
 <div class="producto">
 
-<img src="${imagen}">
+<img src="${imagen}" loading="lazy">
 
 <h3>${titulo}</h3>
 
@@ -155,7 +167,9 @@ document.getElementById("catalogo").innerHTML += `
 
 }
 
-});
+productosMostrados += cantidadMostrar;
+
+}
 
 </script>
 </div>
@@ -167,5 +181,6 @@ document.getElementById("catalogo").innerHTML += `
 </body>
 
 </html>
+
 
 
