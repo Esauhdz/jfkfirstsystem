@@ -180,11 +180,25 @@ paginacion.innerHTML = "";
 
 paginacion.innerHTML += `<button onclick="paginaAnterior()"><</button>`;
 
-for(let i=1;i<=totalPaginas;i++){
+// primeras 5 paginas
+for(let i=1; i<=Math.min(5,totalPaginas); i++){
 
 paginacion.innerHTML += `
 <span class="${i==pagina ? 'activa' : ''}" onclick="irPagina(${i})">
 ${i}
+</span>
+`;
+
+}
+
+// si hay muchas paginas agrega ...
+if(totalPaginas > 6){
+
+paginacion.innerHTML += `<span>...</span>`;
+
+paginacion.innerHTML += `
+<span onclick="irPagina(${totalPaginas})">
+${totalPaginas}
 </span>
 `;
 
@@ -246,6 +260,8 @@ Consultar
 
 });
 
+document.getElementById("numeroPagina").innerText = "Página " + pagina;
+
 crearPaginacion();
 
 }
@@ -305,6 +321,7 @@ producto.style.display="none";
 </body>
 
 </html>
+
 
 
 
