@@ -194,25 +194,6 @@ Consultar
 </a>
 
 </div>
-function filtrarProductos(){
-
-let input = document.getElementById("busqueda").value.toLowerCase();
-
-let productos = document.querySelectorAll(".producto");
-
-productos.forEach(function(producto){
-
-let texto = producto.textContent.toLowerCase();
-
-if(texto.includes(input)){
-producto.style.display="block";
-}else{
-producto.style.display="none";
-}
-
-});
-
-}
 
 `;
 
@@ -241,6 +222,29 @@ pagina--;
 mostrarPagina();
 
 }
+
+}
+
+</script>
+<script>
+
+function filtrarProductos(){
+
+let input = document.getElementById("busqueda").value.toLowerCase();
+
+let productos = document.querySelectorAll(".producto");
+
+productos.forEach(function(producto){
+
+let texto = producto.textContent.toLowerCase();
+
+if(texto.includes(input)){
+producto.style.display="block";
+}else{
+producto.style.display="none";
+}
+
+});
 
 }
 
