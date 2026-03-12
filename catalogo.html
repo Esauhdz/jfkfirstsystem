@@ -40,6 +40,22 @@ color:#0a2a43;
 margin-top:40px;
 }
 
+.buscador{
+width:90%;
+max-width:1200px;
+margin:auto;
+text-align:center;
+margin-top:30px;
+}
+
+#busqueda{
+width:60%;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
 .catalogo{
 width:90%;
 max-width:1300px;
@@ -106,9 +122,8 @@ margin-top:40px;
 
 <h2>Equipos</h2>
 <div style="text-align:center; margin:20px;">
-<input type="text" id="buscador" placeholder="Buscar producto..." 
-onkeyup="buscarProducto()" 
-style="padding:10px; width:250px; border-radius:6px; border:1px solid #ccc;">
+<div class="buscador">
+<input type="text" id="busqueda" placeholder="Buscar producto..." onkeyup="filtrarProductos()">
 </div>
 
 <div id="catalogo" class="catalogo"></div>
@@ -179,6 +194,25 @@ Consultar
 </a>
 
 </div>
+function filtrarProductos(){
+
+let input = document.getElementById("busqueda").value.toLowerCase();
+
+let productos = document.querySelectorAll(".producto");
+
+productos.forEach(function(producto){
+
+let texto = producto.textContent.toLowerCase();
+
+if(texto.includes(input)){
+producto.style.display="block";
+}else{
+producto.style.display="none";
+}
+
+});
+
+}
 
 `;
 
@@ -220,6 +254,7 @@ mostrarPagina();
 </body>
 
 </html>
+
 
 
 
