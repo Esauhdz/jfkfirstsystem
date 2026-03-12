@@ -170,50 +170,6 @@ mostrarPagina();
 });
 
 function mostrarPagina(){
-function crearPaginacion(){
-
-let totalPaginas = Math.ceil(productos.length / productosPorPagina);
-
-let paginacion = document.getElementById("paginacion");
-
-paginacion.innerHTML = "";
-
-paginacion.innerHTML += `<button onclick="paginaAnterior()"><</button>`;
-
-// primeras 5 paginas
-for(let i=1; i<=Math.min(5,totalPaginas); i++){
-
-paginacion.innerHTML += `
-<span class="${i==pagina ? 'activa' : ''}" onclick="irPagina(${i})">
-${i}
-</span>
-`;
-
-}
-
-// si hay muchas paginas agrega ...
-if(totalPaginas > 6){
-
-paginacion.innerHTML += `<span>...</span>`;
-
-paginacion.innerHTML += `
-<span onclick="irPagina(${totalPaginas})">
-${totalPaginas}
-</span>
-`;
-
-}
-
-paginacion.innerHTML += `<button onclick="paginaSiguiente()">></button>`;
-
-}
-function irPagina(num){
-
-pagina = num;
-
-mostrarPagina();
-
-}
 
 let catalogo = document.getElementById("catalogo");
 catalogo.innerHTML = "";
@@ -250,7 +206,7 @@ catalogo.innerHTML += `
 *Precio y disponibilidad sujetos a stock
 </p>
 
-<a href="https://wa.me/5218124199535?text=Hola me interesa ${titulo}" target="_blank">
+<a class="btn" href="https://wa.me/5218124199535?text=Hola me interesa ${titulo}" target="_blank">
 Consultar
 </a>
 
@@ -260,9 +216,50 @@ Consultar
 
 });
 
-document.getElementById("numeroPagina").innerText = "Página " + pagina;
-
 crearPaginacion();
+
+}
+
+function crearPaginacion(){
+
+let totalPaginas = Math.ceil(productos.length / productosPorPagina);
+
+let paginacion = document.getElementById("paginacion");
+
+paginacion.innerHTML = "";
+
+paginacion.innerHTML += `<button onclick="paginaAnterior()"><</button>`;
+
+for(let i=1; i<=Math.min(5,totalPaginas); i++){
+
+paginacion.innerHTML += `
+<span class="${i==pagina ? 'activa' : ''}" onclick="irPagina(${i})">
+${i}
+</span>
+`;
+
+}
+
+if(totalPaginas > 5){
+
+paginacion.innerHTML += `<span>...</span>`;
+
+paginacion.innerHTML += `
+<span onclick="irPagina(${totalPaginas})">
+${totalPaginas}
+</span>
+`;
+
+}
+
+paginacion.innerHTML += `<button onclick="paginaSiguiente()">></button>`;
+
+}
+
+function irPagina(num){
+
+pagina = num;
+mostrarPagina();
 
 }
 
@@ -279,7 +276,7 @@ mostrarPagina();
 
 function paginaAnterior(){
 
-if(pagina>1){
+if(pagina > 1){
 
 pagina--;
 mostrarPagina();
@@ -321,6 +318,7 @@ producto.style.display="none";
 </body>
 
 </html>
+
 
 
 
