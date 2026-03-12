@@ -127,37 +127,27 @@ const xml = parser.parseFromString(data,"text/xml");
 
 const productos = xml.getElementsByTagName("producto");
 
-for(let i=0;i<productos.length;i++){
+let limite = 20;   // cantidad de productos que se mostrarán
+
+for(let i=0;i<productos.length && i<limite;i++){
 
 let titulo = productos[i].getElementsByTagName("titulo")[0].textContent;
 let precio = productos[i].getElementsByTagName("su_precio")[0].textContent;
 let imagen = productos[i].getElementsByTagName("url_imagen")[0].textContent;
-let marca = productos[i].getElementsByTagName("marca")[0].textContent;
-let stock = productos[i].getElementsByTagName("existencia")[0].textContent;
 
 document.getElementById("catalogo").innerHTML += `
 
-<div class="producto item">
+<div class="producto">
 
 <img src="${imagen}">
 
 <h3>${titulo}</h3>
 
-<p><strong>Marca:</strong> ${marca}</p>
-
 <p><strong>PRECIO: $${precio}</strong></p>
-
-<p><strong>Stock:</strong> ${stock}</p>
 
 <p style="font-size:12px;color:#666;">
 *Precio y disponibilidad sujetos a stock
 </p>
-
-<a class="btn"
-href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20${titulo}"
-target="_blank">
-Consultar
-</a>
 
 </div>
 
@@ -177,4 +167,5 @@ Consultar
 </body>
 
 </html>
+
 
