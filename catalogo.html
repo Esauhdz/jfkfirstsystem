@@ -106,6 +106,21 @@ padding:20px;
 margin-top:40px;
 }
 
+.paginacion{
+text-align:center;
+margin:20px;
+}
+
+.paginacion button{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#0a2a43;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -232,14 +247,14 @@ function filtrarProductos(){
 
 let input = document.getElementById("busqueda").value.toLowerCase();
 
-let productos = document.querySelectorAll(".producto");
+let listaProductos = document.querySelectorAll(".producto");
 
-productos.forEach(function(producto){
+listaProductos.forEach(function(producto){
 
 let texto = producto.textContent.toLowerCase();
 
 if(texto.includes(input)){
-producto.style.display="block";
+producto.style.display="";
 }else{
 producto.style.display="none";
 }
