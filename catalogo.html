@@ -114,120 +114,52 @@ onkeyup="buscarProducto()"
 style="padding:10px; width:250px; border-radius:6px; border:1px solid #ccc;">
 </div>
 
-<div class="catalogo">
+<div id="catalogo" class="catalogo-grid"></div>
+
+
+<script>
+
+fetch("camaras.xml")
+.then(response => response.text())
+.then(data => {
+
+const parser = new DOMParser();
+const xml = parser.parseFromString(data,"text/xml");
+
+const productos = xml.getElementsByTagName("producto");
+
+for(let i=0;i<productos.length;i++){
+
+let nombre = productos[i].getElementsByTagName("nombre")[0].textContent;
+let precio = productos[i].getElementsByTagName("precio")[0].textContent;
+
+document.getElementById("catalogo").innerHTML += `
+
 <div class="producto item">
-<img src="(1) Bala TURBOHD.png">
-  
-<h3>HiLook Bala TURBOHD 2MP</h3>
-<p>
-Bala TURBOHD 2 Megapíxeles (1080p)<br>
-Gran Angular 103°<br>
-Lente 2.8 mm<br>
-IR EXIR Inteligente 20 mts<br>
-Exterior IP66<br>
-dWDR<br>
-TVI-AHD-CVI-CVBS
-</p>
 
-<ul style="text-align:left; font-size:14px;">
-<li>Resolución 2 MP (1920x1080) Full HD</li>
-<li>Lente 2.8 mm con ángulo 103°</li>
-<li>IR EXIR inteligente con alcance 20 metros</li>
-<li>4 tecnologías: TVI-AHD-CVI-CVBS seleccionables</li>
-<li>Protección IP66 para exterior e interior</li>
-<li>Detección WDR y BLC para alto contraste</li>
-</ul>
+<h3>${nombre}</h3>
 
-<p><strong>PRECIO: $443.71</strong></p>
+<p><strong>PRECIO: $${precio}</strong></p>
 
-  <p style="font-size:12px; color:#666;">
-*Precio y disponibilidad sujetos a stock.
+<p style="font-size:12px;color:#666;">
+*Precio y disponibilidad sujetos a stock
 </p>
 
 <a class="btn"
-href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20la%20camara%20Bala%20TurboHD"
+href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20el%20producto%20${nombre}"
 target="_blank">
 Consultar
 </a>
 
 </div>
-<div class="producto item">
 
-<img src="(2) Turret TURBOHD.png">
+`;
 
-<h3>EPCOM PROFESSIONAL Turret TURBOHD 2MP</h3>
+}
 
-<p>
-Turret TURBOHD 2 Megapixel (1080p)<br>
-METÁLICA<br>
-Gran Angular 103°<br>
-Lente 2.8 mm<br>
-IR EXIR 20 Mts<br>
-Exterior IP66<br>
-TVI-AHD-CVI-CVBS<br>
-dWDR
-</p>
+});
 
-<ul style="text-align:left; font-size:14px;">
-<li>Resolución Full HD 2MP (1920x1080)</li>
-<li>Iluminación mínima 0.01 lux con IR 20m</li>
-<li>Lente fijo 2.8 mm, ángulo 103°</li>
-<li>Compatibilidad TVI-AHD-CVI-CVBS seleccionable</li>
-<li>Protección IP66 para exterior</li>
-<li>Construcción metálica duradera</li>
-</ul>
-
-<p><strong>PRECIO: $549.00</strong></p>
-  
-  <p style="font-size:12px; color:#666;">
-*Precio y disponibilidad sujetos a stock.
-</p>
-
-<a class="btn"
-href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20la%20camara%20Turret%20TurboHD"
-target="_blank">
-Consultar
-</a>
-  
-</div>
-<div class="producto item">
-
-<img src="(3) DVR 4 Canales TurboHD.png">
-
-<h3>EPCOM PROFESSIONAL DVR 4 Canales TurboHD</h3>
-
-<p>
-DVR 4 Canales TurboHD + 1 Canal IP<br>
-2 Megapixel (1080p) Lite<br>
-Acusense Lite (Evita falsas alarmas)<br>
-Audio por Coaxitron<br>
-1 Bahía de Disco Duro<br>
-Compresión H.265+<br>
-Salida de vídeo Full HD
-</p>
-
-<ul style="text-align:left; font-size:14px;">
-<li>Tecnología TurboHD 1080p Lite para alta definición</li>
-<li>Soporte 5 tecnologías: HD-TVI, CVI, AHD, IP y analógico</li>
-<li>Compresión H.265+ / H.265 para máxima eficiencia</li>
-<li>Acceso remoto desde PC y smartphone</li>
-<li>Filtrado inteligente de humanos y vehículos con Acusense Lite</li>
-<li>Salida de vídeo Full HD HDMI y VGA simultánea</li>
-</ul>
-
-<p><strong>PRECIO: $1,099.67</strong></p>
-
-  <p style="font-size:12px; color:#666;">
-*Precio y disponibilidad sujetos a stock.
-</p>
-
-<a class="btn"
-href="https://wa.me/5218124199535?text=Hola%20me%20interesa%20el%20DVR%204%20Canales%20TurboHD%20EPCOM"
-target="_blank">
-Consultar
-</a>
-
-</div>
+</script>
 
 </div>
 
@@ -238,6 +170,7 @@ Consultar
 </body>
 
 </html>
+
 
 
 
