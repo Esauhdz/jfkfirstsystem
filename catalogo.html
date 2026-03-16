@@ -156,14 +156,21 @@ let productos = [];
 let pagina = 1;
 let productosPorPagina = 20;
 
-fetch("camaras.xml")
-.then(res => res.text())
-.then(data => {
+Promise.all([
+fetch("camaras.xml").then(res => res.text()),
+fetch("dvr.xml").then(res => res.text())
+])
+.then(([data1, data2]) => {
 
 const parser = new DOMParser();
-const xml = parser.parseFromString(data,"text/xml");
 
-productos = Array.from(xml.getElementsByTagName("producto"));
+const xml1 = parser.parseFromString(data1,"text/xml");
+const xml2 = parser.parseFromString(data2,"text/xml");
+
+let productos1 = Array.from(xml1.getElementsByTagName("producto"));
+let productos2 = Array.from(xml2.getElementsByTagName("producto"));
+
+productos = productos1.concat(productos2);
 
 mostrarPagina();
 
