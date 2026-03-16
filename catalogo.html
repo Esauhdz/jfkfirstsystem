@@ -193,7 +193,7 @@ let precioUSD = parseFloat(p.getElementsByTagName("precio_lista_usd")[0].textCon
 let imagen = p.getElementsByTagName("url_imagen")[0].textContent;
 let marca = p.getElementsByTagName("marca")[0].textContent;
 
-let tipoCambio = 17.78;
+let tipoCambio = 17.84;
 let precioMXN = precioUSD * tipoCambio;
 let precioFinal = (precioMXN * 1.16).toFixed(2);
 
